@@ -8,3 +8,5 @@ RUN apt-get update \
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 USER jenkins
+RUN mkdir /var/jenkins_home/TMPDIR
+ENV TMPDIR /var/jenkins_home/TMPDIR
