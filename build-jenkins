@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # allow jenkins to fire up ephemeral containers
 sudo useradd jenkins
 sudo usermod -aG docker jenkins
-
+sudo mkdir -p /var/jenkins_home/TMPDIR
+sudo chown -R jenkins /var/jenkins_home
 
 docker build \
     -t jenkins:local \
-    -f Dockerfile-Jenkins \
+    -f Dockerfile \
     .
