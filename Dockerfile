@@ -1,12 +1,10 @@
 FROM jenkins/jenkins:lts
+LABEL maintainer="Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com)"
 
 USER root
 RUN apt-get update \
-      && apt-get upgrade -y \
-      && apt-get install -y sudo libltdl-dev \
-      && rm -rf /var/lib/apt/lists/*
-RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+  && apt upgrade -y \
+  && apt install -y libltdl \
+  && rm -rf /var/lib/apt/lists/*
 
 USER jenkins
-RUN mkdir /var/jenkins_home/TMPDIR
-ENV TMPDIR /var/jenkins_home/TMPDIR
