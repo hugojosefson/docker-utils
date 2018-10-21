@@ -5,6 +5,10 @@ Run Jenkins in Docker with more Docker.
 Allow Jenkins to spawn Docker containers when it builds. And keep the
 convenience of getting Jenkins via Docker.
 
+Based on `jenkins/jenkins:lts`, and is automatically rebuilt by Docker
+Hub every time a new `lts` version is pushed to the `jenkins/jenkins`
+repo.
+
 ## Prerequisites
 
 Install Docker.
