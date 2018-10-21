@@ -7,7 +7,7 @@ jenkins_uid=$(docker run --rm hugojosefson/jenkins-dockerception:lts id -u)
 # give docker to jenkins
 sudo chown ${jenkins_uid} /var/run/docker.sock
 
-# give jenkins its own home and TMPDIR, accessible from uid 1000 as is used inside the jenkins docker
+# give jenkins its own home and TMPDIR, accessible from the uid used inside the jenkins docker container
 sudo mkdir -p /var/jenkins_home/TMPDIR
 sudo chown ${jenkins_uid} /var/jenkins_home
 sudo chown ${jenkins_uid} /var/jenkins_home/TMPDIR
