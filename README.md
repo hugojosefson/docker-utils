@@ -14,7 +14,7 @@ sudo systemctl start docker
 
 ## Install jenkins-dockerception
 
-This will install a Docker container named `jenkins`, which will
+This will install and start a Docker container named `jenkins`, which will
 auto-start on boot.
 
 ```bash
