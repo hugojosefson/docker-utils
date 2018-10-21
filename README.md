@@ -1,4 +1,4 @@
-# jenkins-dockerception
+# hugojosefson/jenkins-dockerception
 
 Run Jenkins in Docker with more Docker.
 
