@@ -32,11 +32,13 @@ cd jenkins-dockerception
 ./install-jenkins-dockerception
 ```
 
-Check the log for initial login password:
+Check the log for initial login password, and copy it:
 
 ```bash
 docker logs -f jenkins
 ```
+
+Continue Jenkins setup at http://localhost:8080/
 
 ## Optionally, build
 
