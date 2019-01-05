@@ -7,10 +7,9 @@ jenkins_uid=$(docker run --rm hugojosefson/jenkins-dockerception:lts id -u)
 # give docker to jenkins
 sudo chown ${jenkins_uid} /var/run/docker.sock
 
-# give jenkins its own home and TMPDIR, accessible from the uid used inside the jenkins docker container
-sudo mkdir -p /var/jenkins_home/TMPDIR
+# set up jenkins home dir
+sudo mkdir -p /var/jenkins_home
 sudo chown ${jenkins_uid} /var/jenkins_home
-sudo chown ${jenkins_uid} /var/jenkins_home/TMPDIR
 
 # install docker container 'jenkins'
 docker run \
@@ -19,7 +18,6 @@ docker run \
   --name jenkins \
   -p 8080:8080 \
   -p 50000:50000 \
-  -e TMPDIR=/var/jenkins_home/TMPDIR \
   -v /var/jenkins_home:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $(which docker):$(which docker) \
