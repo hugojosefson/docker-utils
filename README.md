@@ -27,9 +27,7 @@ This will install and start a Docker container named `jenkins`, which will
 auto-start on boot.
 
 ```bash
-git clone https://github.com/hugojosefson/jenkins-dockerception
-cd jenkins-dockerception
-./install-jenkins-dockerception
+curl -s https://raw.githubusercontent.com/hugojosefson/jenkins-dockerception/master/install-jenkins-dockerception | bash
 ```
 
 Check the log for initial login password, and copy it:
