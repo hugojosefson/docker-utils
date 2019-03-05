@@ -6,6 +6,7 @@ jenkins_uid=$(docker run --rm hugojosefson/jenkins-dockerception:lts id -u)
 
 # give docker to jenkins
 sudo chown ${jenkins_uid} /var/run/docker.sock
+echo -e "\nsudo chown ${jenkins_uid} /var/run/docker.sock" >> /etc/rc.local
 
 # set up jenkins home dir
 sudo mkdir -p /var/jenkins_home
