@@ -43,5 +43,5 @@ Continue Jenkins setup at http://localhost:8080/
 You may optionally build the `jenkins-dockerception` image yourself.
 
 ```bash
-./build-jenkins-dockerception
+./docker-build
 ```
